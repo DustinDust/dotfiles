@@ -1,4 +1,5 @@
 # REQUIREMENTS:git, alacritty, zsh, homebrew, tmux, neovim, oh-my-tmux, oh-my-zsh,
+# Neovim requirements in the .config/nvim/README.md
 
 # install homebrew
 if ! command -v brew >/dev/null 2>&1
