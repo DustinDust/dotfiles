@@ -139,4 +139,11 @@ export EDITOR=nvim
 # for macos 
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
+
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+. "$HOME/.local/bin/env"
+

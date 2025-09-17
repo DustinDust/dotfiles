@@ -32,3 +32,6 @@ vim.opt.background = "dark"
 -- vim.opt.colorcolumn = "80"
 ColorMyPencils("kanagawa")
 vim.o.background = "dark"
+
+vim.g.copilot_node_command="/Users/nimble/.nvm/versions/node/v24.0.1/bin/node"
+
