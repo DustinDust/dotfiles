@@ -132,18 +132,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
-
-export GPG_TTY=$(tty)
 export EDITOR=nvim
+alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+eval "$(/Users/nimble/.local/bin/mise activate zsh)"
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 # for macos 
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
-
-alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
-
-. "$HOME/.local/bin/env"
 

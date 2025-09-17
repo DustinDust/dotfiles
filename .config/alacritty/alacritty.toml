@@ -6,7 +6,7 @@ live_config_reload = true
 
 # THEMES
 import = [
-    "./themes/themes/kanagawa_dragon.toml"
+    "./themes/themes/kanagawa_wave.toml"
 ]
 
 [window]
