@@ -1,5 +1,9 @@
 [tools]
-node = "24"
+node = '24'
+uv = 'latest'
+cmake = 'latest'
+rust = { version = 'latest' }
+go = 'latest'
 
 [settings]
 idiomatic_version_file_enable_tools = []

@@ -71,29 +71,15 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    gitfast
+    git-prompt
     macos
     command-not-found
-    gitfast
     fzf
     ssh
     tmux
     aws
     docker
-    dotenv
-    asdf
-    golang
-    node
-    rust
-    ruby
-    terraform
-    mvn
-    npm
-    yarn
-    bundler
-    rake-fast
-    rails
-    rbenv
-    pyenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -127,19 +113,25 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# moved to mise
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
 export EDITOR=nvim
 alias dotfiles='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 eval "$(/Users/nimble/.local/bin/mise activate zsh)"
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+eval "$(zoxide init zsh)"
+export GPG_TTY=$(tty)
+
 
 # for macos 
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
+
 

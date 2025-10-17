@@ -40,13 +40,3 @@ fi
 # fonts
 echo "Installing fonts..."
 brew install --cask font-jetbrains-mono-nerd-font
-
-# install oh-my-zsh
-echo "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# installing oh-my-tmux
-echo "Installing oh-my-tmux..."
-git clone --single-branch https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
-cp .tmux/.tmux.conf.local .
